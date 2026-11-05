@@ -1,0 +1,20 @@
+# local only: search index (rebuildable from data/corpus), backups, environment
+data/*.db*
+data/backup/
+data/inbox/*
+!data/inbox/.gitkeep
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# KEPT in git on purpose: data/corpus/ (cleaned text) and data/sources.json.
+# NOT in git: data/raw/ (original PDFs, 208 MB; one file is >100 MB, GitHub rejects it). Keep those in a
+# shared drive / backup instead. The app only needs data/corpus to rebuild its index.
+data/raw/
+data/backup/
+.env.*
+!.env.example
+
+# local secrets + server settings (NEVER commit or share)
+.env

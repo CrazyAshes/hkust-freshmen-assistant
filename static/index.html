@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HKUST Freshmen Assistant</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <div class="brand">HKUST Freshmen Assistant <span class="tag" data-i18n="brand.tag"></span></div>
+  <nav id="tabs">
+    <button data-tab="chat" class="active" data-i18n="tab.chat"></button>
+    <button data-tab="kb" data-i18n="tab.kb"></button>
+    <button data-tab="settings" data-i18n="tab.settings"></button>
+    <button data-tab="log" data-i18n="tab.log"></button>
+  </nav>
+  <div id="status" class="status"></div>
+  <button id="lang-btn" class="lang-btn" type="button"></button>
+</header>
+
+<main>
+<section id="tab-chat" class="tab active">
+  <div id="empty-warn" class="warn hidden" data-i18n="chat.emptyWarn"></div>
+  <div id="welcome">
+    <div class="crest" aria-hidden="true">H</div>
+    <h1 data-i18n="welcome.title"></h1>
+    <p data-i18n="welcome.sub"></p>
+    <div class="examples" id="examples"></div>
+  </div>
+  <div id="messages" aria-live="polite"></div>
+  <form id="chat-form">
+    <select id="cat-filter" data-i18n-title="chat.catTitle"></select>
+    <input id="question" data-i18n-ph="chat.placeholder" autocomplete="off">
+    <button type="submit" id="send" data-i18n="chat.send"></button>
+  </form>
+  <p class="hint" data-i18n="chat.hint"></p>
+</section>
+
+<section id="tab-kb" class="tab">
+  <div class="cards">
+    <div class="card"><h3 data-i18n="kb.upload.title"></h3>
+      <p class="hint" data-i18n="kb.upload.hint"></p>
+      <div class="row">
+        <select id="up-cat"></select>
+        <select id="up-type"><option value="official" id="opt-official"></option><option value="student" id="opt-student"></option></select>
+      </div>
+      <input id="up-url" data-i18n-ph="kb.url.ph">
+      <input id="up-pub" data-i18n-ph="kb.pub.ph">
+      <input id="up-date" data-i18n-ph="kb.date.ph">
+      <input type="file" id="up-file" multiple>
+      <div id="up-result" class="result"></div>
+    </div>
+    <div class="card"><h3 data-i18n="kb.fromUrl.title"></h3>
+      <p class="hint" data-i18n="kb.fromUrl.hint"></p>
+      <input id="url-in" placeholder="https://...">
+      <div class="row"><button id="url-btn" data-i18n="kb.fromUrl.btn"></button></div>
+      <div id="url-result" class="result"></div>
+    </div>
+    <div class="card"><h3 data-i18n="kb.paste.title"></h3>
+      <input id="tx-title" data-i18n-ph="kb.paste.titlePh">
+      <textarea id="tx-body" rows="5" data-i18n-ph="kb.paste.bodyPh"></textarea>
+      <div class="row"><button id="tx-btn" data-i18n="kb.paste.btn"></button></div>
+      <div id="tx-result" class="result"></div>
+    </div>
+  </div>
+
+  <div class="card wide" id="card-links"><h3 data-i18n="kb.links.title"></h3>
+    <p class="hint" data-i18n="kb.links.hint"></p>
+    <textarea id="links-text" rows="2" data-i18n-ph="kb.links.ph"></textarea>
+    <div class="row"><button id="links-parse" data-i18n="kb.links.parse"></button><button id="fetch-all" data-i18n="kb.links.fetchAll"></button></div>
+    <table id="src-table"><thead><tr><th data-i18n="kb.th.topic"></th><th data-i18n="kb.th.name"></th><th data-i18n="kb.th.status"></th><th></th></tr></thead><tbody></tbody></table>
+  </div>
+
+  <div class="card wide"><h3><span data-i18n="kb.docs.title"></span> <span id="kb-stats" class="hint"></span></h3>
+    <table id="doc-table"><thead><tr><th data-i18n="kb.th.title"></th><th data-i18n="kb.th.topic"></th><th data-i18n="kb.th.type"></th><th data-i18n="kb.th.chunks"></th><th data-i18n="kb.th.date"></th><th></th></tr></thead><tbody></tbody></table>
+  </div>
+</section>
+
+<section id="tab-settings" class="tab">
+  <div class="card">
+    <h3 data-i18n="set.title"></h3>
+    <label data-i18n="set.preset"></label>
+    <select id="s-preset">
+      <option value="hkust" data-i18n="set.preset.hkust"></option>
+      <option value="openai" data-i18n="set.preset.openai"></option>
+      <option value="custom" data-i18n="set.preset.custom"></option>
+    </select>
+    <p id="preset-note" class="hint"></p>
+    <label>API Key</label>
+    <input id="s-key" type="password" placeholder="sk-..." autocomplete="off">
+    <label data-i18n="set.model"></label>
+    <input id="s-model" value="gpt-4o-mini" data-i18n-ph="set.modelPh">
+    <label>API Base URL</label>
+    <input id="s-base" value="https://api.openai.com/v1">
+    <label class="inline"><input type="checkbox" id="s-agent" checked> <span data-i18n="set.agent"></span></label>
+    <label class="inline"><input type="checkbox" id="s-remember"> <span data-i18n="set.remember"></span></label>
+    <div class="row"><button id="s-test" data-i18n="set.test"></button><button id="s-clear" class="ghost" data-i18n="set.clear"></button></div>
+    <div id="s-result" class="result"></div>
+    <p class="hint" data-i18n="set.privacy"></p>
+  </div>
+</section>
+
+<section id="tab-log" class="tab">
+  <div class="card wide"><h3><span data-i18n="log.title"></span> <button id="log-export" class="ghost" data-i18n="log.export"></button></h3>
+    <table id="log-table"><thead><tr><th data-i18n="log.th.time"></th><th data-i18n="log.th.question"></th><th data-i18n="log.th.mode"></th><th data-i18n="log.th.flags"></th><th data-i18n="log.th.ms"></th><th data-i18n="log.th.sources"></th></tr></thead><tbody></tbody></table>
+  </div>
+</section>
+</main>
+<footer class="credit">Developed by <strong>Yuyin Liu</strong></footer>
+<script src="/i18n.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

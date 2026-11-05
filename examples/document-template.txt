@@ -1,0 +1,12 @@
+title: 示例：Wi-Fi 连接指引（仅演示格式，不是真实校园资料）
+category: WiFi
+source_url: https://itso.hkust.edu.hk/services/general-it-services/wifi
+publisher: HKUST ITSO
+source_type: official
+effective_date:
+
+这是演示文档的格式。真实资料请由组员核对后替换，不要把本示例当作校园事实。
+
+## 正文
+在这里写清洗后的规则、步骤、条件与例外。
+保留“本科生/研究生”“学期/假期”等适用条件，不要合并成同一条规则。

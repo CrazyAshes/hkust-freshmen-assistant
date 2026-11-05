@@ -1,0 +1,19 @@
+[
+  {"category": "Hall", "label": "宿舍申请 FAQ (UG)", "url": "https://shrl.hkust.edu.hk/faq/ug-applicant-related", "publisher": "HKUST SHRL", "source_type": "official"},
+  {"category": "Hall", "label": "宿舍生活小贴士", "url": "https://shrl.hkust.edu.hk/residential-halls/hall-life/living-tips", "publisher": "HKUST SHRL", "source_type": "official"},
+  {"category": "Hall", "label": "宿舍电子手册", "url": "https://ebookshelf.hkust.edu.hk/flippingbook/G23787/", "publisher": "HKUST SHRL", "source_type": "official"},
+  {"category": "Dining", "label": "餐厅位置", "url": "https://cso.hkust.edu.hk/locations/restaurants", "publisher": "HKUST CSO", "source_type": "official"},
+  {"category": "Dining", "label": "餐饮零售营业时间更新", "url": "https://cso.hkust.edu.hk/Latest%20Update%20of%20Opening%20Hours%20of%20Catering%20and%20Retail%20Outlets", "publisher": "HKUST CSO", "source_type": "official"},
+  {"category": "Printing", "label": "打印额度 (Budget)", "url": "https://itso.hkust.edu.hk/services/academic-teaching-support/facilities/printing-facilities/%2Abudget%2A", "publisher": "HKUST ITSO", "source_type": "official"},
+  {"category": "Printing", "label": "多功能打印机 (MFP)", "url": "https://itso.hkust.edu.hk/services/academic-teaching-support/facilities/printing-facilities/mfp", "publisher": "HKUST ITSO", "source_type": "official"},
+  {"category": "WiFi", "label": "Wi-Fi 指引", "url": "https://itso.hkust.edu.hk/services/general-it-services/wifi", "publisher": "HKUST ITSO", "source_type": "official"},
+  {"category": "WiFi", "label": "ITSO 学生入口", "url": "https://itso.hkust.edu.hk/info/student", "publisher": "HKUST ITSO", "source_type": "official"},
+  {"category": "Sports", "label": "体育设施总览", "url": "https://dst.hkust.edu.hk/support-%26-resources/sports-facilities/", "publisher": "HKUST DST", "source_type": "official"},
+  {"category": "Sports", "label": "室内体育设施", "url": "https://dst.hkust.edu.hk/support-%26-resources/sports-facilities/indoor-sports-facilities", "publisher": "HKUST DST", "source_type": "official"},
+  {"category": "Sports", "label": "室外体育设施", "url": "https://dst.hkust.edu.hk/support-%26-resources/sports-facilities/outdoor-sports-facilities", "publisher": "HKUST DST", "source_type": "official"},
+  {"category": "Sports", "label": "场馆新开放时间 (PDF)", "url": "https://dst.hkust.edu.hk/sites/default/files/2026-09/Enhanced_Access_to_Sports_Facilities_New_Opening_Hours.pdf", "publisher": "HKUST DST", "source_type": "official"},
+  {"category": "General", "label": "MSSS 微信攻略合集", "url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzAwNjAxNTYxNw%3D%3D&action=getalbum&album_id=3879314961398415378", "publisher": "MSSS", "source_type": "student"},
+  {"category": "General", "label": "腾讯文档攻略 (PDF)", "url": "https://docs.qq.com/pdf/DYWhYUVRqT25QcGp1", "publisher": "MSSS", "source_type": "student"},
+  {"category": "Map", "label": "校园地图 (PDF)", "url": "http://publish.ust.hk/univ/maps/Campus_Map_Color.pdf", "publisher": "HKUST", "source_type": "official"},
+  {"category": "General", "label": "本科生指南", "url": "https://registry.hkust.edu.hk/resource-library/undergraduate-student-guide-0", "publisher": "HKUST Registry", "source_type": "official"}
+]
